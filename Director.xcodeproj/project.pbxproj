@@ -14,6 +14,9 @@
 		206F0B411B55BDAF00B95074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 206F0B3F1B55BDAF00B95074 /* LaunchScreen.storyboard */; };
 		206F0B4C1B55BDAF00B95074 /* DirectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F0B4B1B55BDAF00B95074 /* DirectorTests.swift */; };
 		206F0B571B55BDAF00B95074 /* DirectorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206F0B561B55BDAF00B95074 /* DirectorUITests.swift */; };
+		206F0B671B55C07200B95074 /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206F0B641B55C07200B95074 /* Box.framework */; };
+		206F0B681B55C07200B95074 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206F0B651B55C07200B95074 /* ReactiveCocoa.framework */; };
+		206F0B691B55C07200B95074 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 206F0B661B55C07200B95074 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		206F0B521B55BDAF00B95074 /* DirectorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		206F0B561B55BDAF00B95074 /* DirectorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectorUITests.swift; sourceTree = "<group>"; };
 		206F0B581B55BDAF00B95074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		206F0B641B55C07200B95074 /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
+		206F0B651B55C07200B95074 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		206F0B661B55C07200B95074 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206F0B671B55C07200B95074 /* Box.framework in Frameworks */,
+				206F0B681B55C07200B95074 /* ReactiveCocoa.framework in Frameworks */,
+				206F0B691B55C07200B95074 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				206F0B351B55BDAF00B95074 /* Director */,
+				206F0B6A1B55C07A00B95074 /* Frameworks */,
 				206F0B4A1B55BDAF00B95074 /* DirectorTests */,
 				206F0B551B55BDAF00B95074 /* DirectorUITests */,
 				206F0B341B55BDAF00B95074 /* Products */,
@@ -125,6 +135,16 @@
 			path = DirectorUITests;
 			sourceTree = "<group>";
 		};
+		206F0B6A1B55C07A00B95074 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				206F0B641B55C07200B95074 /* Box.framework */,
+				206F0B651B55C07200B95074 /* ReactiveCocoa.framework */,
+				206F0B661B55C07200B95074 /* Result.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +155,7 @@
 				206F0B2F1B55BDAE00B95074 /* Sources */,
 				206F0B301B55BDAE00B95074 /* Frameworks */,
 				206F0B311B55BDAE00B95074 /* Resources */,
+				206F0B6B1B55C09B00B95074 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +271,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		206F0B6B1B55C09B00B95074 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Box.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		206F0B2F1B55BDAE00B95074 /* Sources */ = {
@@ -486,6 +526,7 @@
 				206F0B5D1B55BDAF00B95074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		206F0B5E1B55BDAF00B95074 /* Build configuration list for PBXNativeTarget "DirectorTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +535,7 @@
 				206F0B601B55BDAF00B95074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		206F0B611B55BDAF00B95074 /* Build configuration list for PBXNativeTarget "DirectorUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +544,7 @@
 				206F0B631B55BDAF00B95074 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
